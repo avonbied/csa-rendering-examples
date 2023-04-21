@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test SSR App</title>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<form id="login">
+		<label for="user">Username:
+			<input type="text" name="user" id="user">
+		</label>
+		<button type="submit">Login</button>
+	</form>
+	<script>
+		const form = document.getElementById('login');
+		const user = document.getElementById('user');
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			console.log(event.target)
+			console.log(user.value)
+			window.location.href = `/user/${user.value}`;
+		});
+	</script>
+</body>
+</html>

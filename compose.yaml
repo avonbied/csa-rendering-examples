@@ -1,0 +1,7 @@
+services:
+  # Server-Side Rendering
+  ssr-app:
+    build: ./ssr-app
+    restart: on-failure
+    ports:
+      - 9090:8080
