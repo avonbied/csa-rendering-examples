@@ -1,0 +1,9 @@
+# Supporting Files
+.dockerignore
+Dockerfile*
+docker-compose*
+compose.yaml
+
+dist/
+node_modules
+npm-debug.log

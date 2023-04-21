@@ -1,0 +1,51 @@
+---
+export interface Props {
+	title?: string;
+	// style?: CSSProperties;
+	size?: 'small' | 'normal' | 'large';
+}
+const { title, size = 'normal' } = Astro.props;
+
+const SIZES = {
+	small: '24pt',
+	normal: '36pt',
+	large: '48pt',
+}
+---
+
+<article>
+	{title ? <header>
+		<h3 class='cardTitle' style={{ fontSize: SIZES[size] }} ><span>{title ?? 'This is a Test Title'}</span></h3>
+	</header> : null}
+	<div class='cardContent'>
+		<slot />
+	</div>
+</article>
+
+<style lang="scss">
+article {
+	display: block;
+	width: 80ch;
+	padding: 16px 16px;
+	margin-bottom: 16px;
+	border-radius: 8px;
+	background-color: rgba(21,21,21,0.7);
+	/* box-shadow: 0 0 24px #fff; */
+	color: #fff;
+	.cardTitle {
+		padding: 4px 16px;
+		font-size: 48pt;
+		span {
+			border-bottom: 1px solid #fff;
+		}
+	}
+	.cardContent {
+		padding: 4px 16px;
+		max-height: 24vh;
+		overflow: hidden;
+	}
+}
+.cardTitle, .cardContent {
+	padding: 4px 16px;
+}
+</style>

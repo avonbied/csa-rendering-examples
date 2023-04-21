@@ -1,0 +1,42 @@
+---
+const completePath = (itemName) => {
+	return `/${itemName}.svg`;
+};
+
+const iconPaths: {
+	[key: string]: { src: string; alt?: string; }
+} = {
+	// LOGOS
+	devto: { src: `${completePath('logo-devto')}` },
+	github: { src: `${completePath('logo-github')}` },
+	linkedin: { src: `${completePath('logo-linkedin')}` },
+	// ICONS
+	'arrow-right': { src: `${completePath('icon-arrowright')}` },
+	checklist: { src: `${completePath('icon-checklist')}` },
+	circuitry: { src: `${completePath('icon-circuitry')}` },
+	'cloud-upload': { src: `${completePath('icon-cloudupload')}` },
+	code: { src: `${completePath('icon-code')}` },
+	graph: { src: `${completePath('icon-graph')}` },
+	terminal: { src: `${completePath('icon-terminal')}` },
+};
+
+export interface Props {
+	icon: keyof typeof iconPaths;
+	color?: string;
+	size?: string;
+	alt?: string;
+}
+
+const { icon, size = '12px', alt } = Astro.props;
+const iconAttr = iconPaths[icon];
+---
+
+<img src={`${iconAttr.src}`} alt={alt ?? iconAttr.alt} />
+
+<style define:vars={{ size }}>
+img {
+	vertical-align: middle;
+	width: var(--size, 1em);
+	height: var(--size, 1em);
+}
+</style>

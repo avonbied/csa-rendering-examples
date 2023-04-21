@@ -1,0 +1,43 @@
+---
+const navLinks = [
+	{name: 'Home', url: '/'},
+	{name: 'About Me', url: '/about'}
+];
+
+const pages = await Astro.glob('../pages/*.astro');
+pages.forEach(p => console.log(`${p.file}: ${p.url}`));
+---
+
+<header>
+	<nav>
+		{navLinks.map(({url, name}) => <a href={url} class:list={[(url == Astro.url.pathname ? 'active' : '')]}>{name}</a>)}
+	</nav>
+</header>
+
+<style lang="scss">
+header {
+	padding: 0 12px;
+	background-color: #000;
+	nav {
+		display: flex;
+		font: 1em sans-serif;
+		padding: 0 8px;
+		justify-content: center;
+		align-items: stretch;
+		a {
+			display: block;
+			flex: 0 0 12ch;
+			font-size: 14pt;
+			text-align: center;
+			text-decoration: none;
+			padding: 1vh;
+			font-weight: bold;
+			transition: all ease-in 100ms;
+			color: #fff;
+		}
+		&:hover, &.active {
+			background: linear-gradient(transparent 90%, #fff);
+		}
+	}
+}
+</style>

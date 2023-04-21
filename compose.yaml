@@ -5,3 +5,10 @@ services:
     restart: on-failure
     ports:
       - 9090:8080
+
+  # Static Site Generation
+  ssg-build:
+    build: ./ssg-site
+    restart: on-failure
+    ports:
+      - 9091:80

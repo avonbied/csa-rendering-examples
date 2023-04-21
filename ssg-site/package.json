@@ -1,0 +1,25 @@
+{
+	"name": "ssg-site",
+	"version": "1.0.0",
+	"author": "Lex von Biedenfeld",
+	"repository": "https://github.com/avonbied/csa-rendering-examples",
+	"license": "MIT",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"prestart": "astro build",
+		"start": "astro check && tsc --noEmit && astro preview",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"astro": "^2.3.0"
+	},
+	"devDependencies": {
+		"@types/node": "^18.15.10",
+		"sass": "^1.60.0"
+	}
+}

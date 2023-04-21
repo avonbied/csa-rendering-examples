@@ -1,0 +1,30 @@
+---
+import Layout from '@layouts/Default.astro';
+
+import Card from '@components/Card.astro';
+import Pill from '@components/Pill.astro';
+import Icon from '@components/Icon.astro';
+
+const title = 'Home';
+---
+
+<Layout title={title}>
+	<section style={{ paddingTop: '2rem' }}>
+		<Card name="Lex von Biedenfeld" position="Sr. Cloud Architect" imageName="test-avatar1.jpg">
+			<p>Hi there! I'm a Houston-based consultant at Accenture and I have a passion for helping clients transform their businesses with the power of cloud computing.
+				Whether it's AWS, Azure, Google Cloud, or any other platform, I have the skills and experience to design, implement, and optimize cloud solutions that meet the needs of clients.</p><br/>
+			<p>I believe that cloud computing is not only a technological trend, but also a strategic advantage that can enhance security, reduce costs, and enable innovation.
+				That's why I aspire to leverage cloud offerings to increase the security, cost-effectiveness, and fluidity of business processes. If you're looking for a cloud expert who can deliver results with enthusiasm and professionalism, look no further than me!</p>
+		</Card>
+	</section>
+</Layout>
+
+<style>
+section {
+	flex: 1 1 100%;
+	display: flex;
+	justify-content: center;
+	padding: 0 4rem;
+	overflow: auto;
+}
+</style>

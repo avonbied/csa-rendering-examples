@@ -1,0 +1,57 @@
+---
+import Icon from '@components/Icon.astro';
+
+const currentYear = new Date().getFullYear();
+
+const userName = 'avonbied';
+
+const iconLinks: { label: string; href: string; icon: string }[] = [
+	{ label: 'LinkedIn', href: `https://linkedin.com/in/${userName}`, icon: 'linkedin' },
+	{ label: 'GitHub', href: `https://github.com/${userName}`, icon: 'github' },
+	{ label: 'Dev.To', href: `https://dev.to/${userName}`, icon: 'devto' }
+];
+---
+<footer>
+	<section>
+		<small>&copy; {currentYear} Lex von Biedenfeld</small> | <small>Last updated <time datetime="2023-04-05">April 5, 2023</time></small>
+	</section>
+	<section class="socials">
+		{iconLinks.map(({ href, icon, label }) => (
+			<a href={href} class="social">
+				<Icon icon={icon} size="2em" alt={label} />
+			</a>
+		))}
+	</section>
+</footer>
+
+<style lang="scss">
+footer {
+	background-color: #171718;
+	color: #fff;
+	padding: 0 64px;
+	section {
+		padding: 8px;
+	}
+	.socials {
+		display: flex;
+		justify-content: center;
+		gap: 24px;
+		:global(img) {
+			height: 3em;
+		}
+	}
+}
+@media (min-width: 50em) {
+	footer {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		.socials {
+			:global(img) {
+				height: 2em;
+			}
+		}
+	}
+}
+</style>
