@@ -1,0 +1,6 @@
+body * { box-sizing: border-box; }
+table { border-collapse: collapse; margin-bottom: 24px; }
+th, td {
+	border: 1px solid black;
+	padding: 4px 8px;
+}
