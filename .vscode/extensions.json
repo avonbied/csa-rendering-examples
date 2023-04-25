@@ -3,6 +3,7 @@
 		"ms-azuretools.vscode-docker",
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-		"astro-build.astro-vscode"
+		"astro-build.astro-vscode",
+		"vscjava.vscode-java-pack"
 	]
 }
