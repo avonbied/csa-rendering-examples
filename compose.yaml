@@ -12,3 +12,10 @@ services:
     restart: on-failure
     ports:
       - 9091:80
+
+  # Client-Side Rendering
+  csr-app:
+    build: ./csr-app
+    restart: on-failure
+    ports:
+      - 9092:8080
