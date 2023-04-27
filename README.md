@@ -10,9 +10,9 @@ Then choose one of the following examples to connect to:
 
 |Example|Link|
 |---|---|
-|CSR Example|[localhost:9090](http://localhost:9090)|
 |SSR Example|[localhost:9091](http://localhost:9090)|
-|SSG Example|[localhost:9092](http://localhost:9090)|
+|SSG Example|[localhost:9092](http://localhost:9091)|
+|CSR Example|[localhost:9090](http://localhost:9092)|
 
 When done run
 * `docker compose down`
